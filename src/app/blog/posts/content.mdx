@@ -27,11 +27,11 @@ Replace the content in the `resources/content.js` file with your own content. Yo
 import Link from "next/link";
 
 const person = {
-  ...
+...
 };`,
-    language: "tsx",
-    label: "src/app/resources/content.js"
-  }
+language: "tsx",
+label: "src/app/resources/content.js"
+}
 ]} />
 
 The imports above would let us use `InlineCode` and `Link` components in the content file.
@@ -41,37 +41,36 @@ The imports above would let us use `InlineCode` and `Link` components in the con
 Your personal details are used across the whole app to render personalized headings, labels and images. Languages are displayed on the `/about` page, and location and time in the header.
 
 <CodeBlock
-    marginBottom="16"
-    highlight="2-3,7-10"
-    codeInstances={[
-  {
-    code:
-`const person = {
-    firstName: "Selene",
-    lastName: "Yu",
+  marginBottom="16"
+  highlight="2-3,7-10"
+  codeInstances={[
+    {
+      code: `const person = {
+    firstName: "Alejandro",
+    lastName: "Rodriguez",
     get name() {
       return "...";
     },
-    role: "Design Engineer",
+    role: "Software Engineer",
     avatar: "/images/avatar.jpg",
-    location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-    languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+    location: "America/Chicago", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+    languages: ["English", "Spanish"], // optional: Leave the array empty if you don't want to display languages
 };`,
-    language: "tsx",
-    label: "src/app/resources/content.js"
-  }
-]} />
+      language: "tsx",
+      label: "src/app/resources/content.js",
+    },
+  ]}
+/>
 
 ### Social links
 
 Social links are rendered on the `/about` page and in the footer based on the array configured in the `social` object. You can set custom icons to each, but don't forget to import them in `src/once-ui/icons.ts`. Read the Once UI documentation](https://once-ui.com/docs/icons) for more information.
 
 <CodeBlock
-    marginBottom="16"
-    codeInstances={[
-  {
-    code:
-`const social = [
+  marginBottom="16"
+  codeInstances={[
+    {
+      code: `const social = [
     {
       name: "GitHub",
       icon: "github",
@@ -83,35 +82,40 @@ Social links are rendered on the `/about` page and in the footer based on the ar
       link: "mailto:lorant@once-ui.com",
     },
 ];`,
-    language: "tsx",
-    label: "src/app/resources/content.js"
-  }
-]} />
+      language: "tsx",
+      label: "src/app/resources/content.js",
+    },
+  ]}
+/>
 
 ### Pages
 
 Each page have it's own object that manages the personalized content, such as headings, subheadings, images and dynamic data.
 
 <CodeBlock
-    marginBottom="16"
-    codeInstances={[
-  {
-    code:
-`const home = {
+  marginBottom="16"
+  codeInstances={[
+    {
+      code: `const home = {
     label: "Home",
-    title: "Selene Yu's Portfolio",
-    description: "Portfolio website showcasing my work as a Design Engineer",
+    title: "Alejandro Rodriguez's Portfolio",
+    description: "Portfolio website showcasing my work as a Developer",
     headline: <>Design engineer and builder</>,
     subline: (
       <>
-        I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive
-        <br /> user experiences. After hours, I build my own projects.
+        I'm a computer science graduate from the University of Illinois at
+        Chicago, where I studied low-level programming in C/C++ as well as
+        high-level programming in JavaScript and Python. I have a strong
+        interest in building scalable and efficient software solutions. I have
+        experience working in languages such as Java, Go, TypeScript, C/C++, and
+        Python.
       </>
     ),
 };`,
-    language: "tsx",
-    label: "src/app/resources/content.js"
-  }
-]} />
+      language: "tsx",
+      label: "src/app/resources/content.js",
+    },
+  ]}
+/>
 
 The `label` property is used in the header navigation. The `title` property is used for the page title and the `description` property is used for the page description. They are also used in meta- and open graph tags.
